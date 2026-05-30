@@ -9,6 +9,11 @@ The objective is to derive actionable business insights that can help financial 
 
 
 ## Dataset Information
+The dataset used in this project is publicly available on Kaggle:
+
+https://www.kaggle.com/code/minanabil11111212/credit-card-fraud-detection/input
+
+Due to file size limitations, the dataset is not included in this repository.
 
 The dataset contains anonymized credit card transactions made by cardholders, including:
 
