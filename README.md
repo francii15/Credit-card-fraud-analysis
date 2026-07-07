@@ -1,125 +1,110 @@
-# Credit Card Fraud Analysis
+# Credit Card Fraud Detection using Machine Learning
 
-## Project Overview
+##  Project Overview
 
-This project performs an exploratory data analysis (EDA) on credit card transaction data to uncover patterns associated with fraudulent activities and understand customer transaction behavior. The analysis focuses on identifying fraud trends, transaction amount distributions, time-based transaction patterns, and risk indicators through statistical analysis and data visualization.
-
-The objective is to derive actionable business insights that can help financial institutions strengthen fraud monitoring strategies and minimize financial losses.
+This project focuses on building a machine learning model to detect fraudulent credit card transactions. Since fraud cases represent only a small fraction of all transactions, the dataset is highly imbalanced. The project applies data preprocessing, feature engineering, and SMOTE to improve the model's ability to detect fraudulent transactions while maintaining good overall performance.
 
 
 
-## Dataset Information
-The dataset used in this project is publicly available on Kaggle:
+#  Problem Statement
 
-https://www.kaggle.com/code/minanabil11111212/credit-card-fraud-detection/input
+Credit card fraud is a major concern for financial institutions, leading to significant financial losses every year. Due to the highly imbalanced nature of transaction data, traditional machine learning models often fail to detect fraudulent transactions effectively. The objective of this project is to develop a reliable fraud detection model that accurately identifies fraudulent transactions while minimizing false negatives.
 
-Due to file size limitations, the dataset is not included in this repository.
+---
 
-The dataset contains anonymized credit card transactions made by cardholders, including:
+#  Objectives
 
-* Transaction Time
-* Transaction Amount
-* Anonymized Features (V1–V28)
-* Fraud Label (Class)
+* Perform Exploratory Data Analysis (EDA) to understand the dataset.
+* Clean and preprocess the data for model training.
+* Engineer relevant features to improve prediction performance.
+* Train and compare multiple machine learning classification models.
+* Handle class imbalance using SMOTE (Synthetic Minority Oversampling Technique).
+* Evaluate model performance using metrics designed for imbalanced datasets.
+* Identify the best-performing model for fraud detection.
 
-  * 0 → Legitimate Transaction
-  * 1 → Fraudulent Transaction
+---
 
+# Dataset Summary
 
+* **Dataset:** Credit Card Fraud Detection
+* **Target Variable:** `Class`
 
-## Tools and Libraries Used
+  * `0` → Legitimate Transaction
+  * `1` → Fraudulent Transaction
+* **Features:**
+
+  * `Time` – Seconds elapsed since the first transaction.
+  * `V1–V28` – Anonymized features generated using Principal Component Analysis (PCA).
+  * `Amount` – Transaction amount.
+* The dataset is highly imbalanced, with fraudulent transactions accounting for only a small percentage of all records.
+
+---
+
+#  Tools & Libraries Used
 
 * Python
 * Pandas
 * NumPy
 * Matplotlib
 * Seaborn
-
-
-
-## Project Workflow
-
-### 1. Data Exploration
-
-* Examined dataset structure and dimensions
-* Checked data types and summary statistics
-* Identified missing values and duplicates
-
-### 2. Data Cleaning
-
-* Removed duplicate records
-* Verified data consistency
-* Prepared data for analysis
-
-### 3. Exploratory Data Analysis (EDA)
-
-#### Fraud Distribution Analysis
-
-* Compared fraudulent and legitimate transaction counts
-* Calculated fraud percentage
-
-#### Transaction Amount Analysis
-
-* Distribution of transaction amounts
-* Fraud vs non-fraud transaction amount comparison
-* Outlier detection
-
-#### Log Transformation Analysis
-
-* Applied log transformation to reduce skewness
-* Improved visualization of transaction amount patterns
-
-#### Time-Based Analysis
-
-* Transaction activity by hour
-* Fraud occurrence across different hours
-* Fraud rate by hour
-
-#### Correlation Analysis
-
-* Examined relationships between variables
-* Identified feature dependencies
-
-#### High-Value Transaction Analysis
-
-* Segmented transactions into high-value and low-value groups
-* Compared fraud rates across transaction categories
+* Scikit-learn
+* Imbalanced-learn (SMOTE)
 
 ---
 
-## Key Findings
+#  Machine Learning Models
 
-* Fraudulent transactions represent only a very small percentage of total transactions, indicating severe class imbalance.
-* Transaction amounts are highly right-skewed, with a small number of extremely large transactions.
-* Log transformation improves the interpretability of transaction amount distributions.
-* Fraud activity varies across different hours of the day, suggesting temporal fraud patterns.
-* High-value transactions exhibit relatively higher fraud rates than low-value transactions.
-* Most features show weak correlations, indicating that each variable contributes unique information about transaction behavior.
-
-
-
-## Business Insights
-
-* Even though fraud occurrences are rare, they pose significant financial risks.
-* Monitoring high-value transactions can improve fraud prevention efforts.
-* Time-based fraud patterns can help financial institutions allocate resources more effectively.
-* Risk-based transaction monitoring can reduce losses while maintaining a smooth customer experience.
-
-
-
-## Conclusion
-
-The analysis demonstrates that fraudulent transactions exhibit distinct behavioral patterns in terms of transaction amounts and timing. By leveraging transaction amount analysis, time-based monitoring, and anomaly detection strategies, financial institutions can strengthen fraud prevention mechanisms and reduce exposure to financial risks.
+* Logistic Regression
+* Decision Tree Classifier
+* Random Forest Classifier
+* Gradient Boosting Classifier
+* AdaBoost Classifier
 
 ---
 
-## Future Enhancements
+#  Evaluation Metrics
 
-* Build an interactive dashboard using Power BI or Tableau
-* Develop machine learning models for fraud detection
-* Perform advanced anomaly detection analysis
-* Create real-time fraud monitoring visualizations
+The models were evaluated using:
+
+* Accuracy
+* Precision
+* Recall
+* F1-Score
+* ROC-AUC Score
+* PR-AUC Score
+* Balanced Accuracy
+* Matthews Correlation Coefficient (MCC)
 
 ---
+
+#  Project Workflow
+
+1. Data Loading
+2. Data Cleaning
+3. Exploratory Data Analysis (EDA)
+4. Feature Engineering
+5. Data Preprocessing and Scaling
+6. Train-Test Split
+7. Baseline Model Training
+8. Baseline Model Evaluation
+9. Handle Class Imbalance using SMOTE
+10. Model Evaluation after SMOTE
+11. Performance Comparison
+12. Conclusion
+
+---
+
+#  Key Highlights
+
+* Performed comprehensive EDA to understand transaction patterns and class imbalance.
+* Applied preprocessing and feature engineering to prepare the dataset.
+* Compared multiple machine learning algorithms using appropriate evaluation metrics.
+* Used SMOTE to balance the minority class in the training data.
+* Evaluated models on the original test set to ensure unbiased performance assessment.
+* Selected the best-performing model based on Recall, F1-score, PR-AUC, and ROC-AUC.
+
+
+
+
 
 
